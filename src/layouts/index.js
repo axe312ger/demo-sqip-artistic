@@ -37,7 +37,7 @@ export const query = graphql`
                  name
                  childImageSharp {
                    sizes(maxWidth: 400, maxHeight: 400) {
-                     ...GatsbyImageSharpSizes_tracedSVG
+                     ...GatsbyImageSharpSizes
                    }
                  }
                }
@@ -50,7 +50,7 @@ export const query = graphql`
                  name
                  childImageSharp {
                    sizes(maxWidth: 4000) {
-                     ...GatsbyImageSharpSizes_tracedSVG
+                     ...GatsbyImageSharpSizes
                    }
                  }
                }
