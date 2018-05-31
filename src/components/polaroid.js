@@ -59,24 +59,12 @@ function generateDynamicStyle(imageData) {
 const Polaroid = ({ image }) => {
   const imageData = data[image.name]
 
-  return (
-    <a
-      href={imageData.url}
-      title={`by ${imageData.author}`}
-      className="polaroid"
-      style={generateDynamicStyle(imageData)}
-    >
+  return <a href={imageData.url} title={`by ${imageData.author}`} className="polaroid" style={generateDynamicStyle(imageData)}>
       <div className="polaroid-image-wrapper">
-        <Image
-          sizes={{
-            ...image.childImageSharp.sizes,
-            base64: image.childImageSharp.sqip.dataURI,
-          }}
-        />
+        <Image sizes={image.childImageSharp.sizes} />
       </div>
       <div className="polaroid-author">{`📷 ${imageData.author}`}</div>
     </a>
-  )
 }
 
 Polaroid.propTypes = {
